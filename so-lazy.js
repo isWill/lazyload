@@ -13,6 +13,7 @@ var lazyload = {
         if (this.imgWrapper[index].children.length === 0) {
             this.imgWrapper[index].appendChild(img);
         }
+        this.resetStyle(index);
     },
     getHeight: function (obj) {  //返回当前元素在当前页面中的高度
         var height = 0;
@@ -20,6 +21,15 @@ var lazyload = {
             height += obj.offsetTop;
         }
         return height;
+    },
+    setAttr: function () {
+        for (var i = 0, len = this.imgWrapper.length; i < len; i++) {
+            this.imgWrapper[i].style.position = 'relative';
+            this.imgWrapper[i].style.paddingTop = '50%';
+        }
+    },
+    resetStyle: function (n) {
+        this.imgWrapper[n].style.paddingTop = '0';
     }
 };
 
@@ -36,5 +46,6 @@ window.onscroll = function () {
 };
 
 window.onload = function () {
+    lazyload.setAttr();
     window.onscroll();
 };
