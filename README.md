@@ -1,4 +1,4 @@
-This is a simple demo of so-lazy.js.
+This is a simple demo of lazyload.js.
 
 ## HTML Template
 
@@ -7,7 +7,8 @@ This is a simple demo of so-lazy.js.
 <html>
 <head></head>
 <body>
-    <div class="img-wrapper" data-src="image's path"></div>
-    <script src="so-lazy.js"></script>
+    <img class="default.png" data-src="image's path" />
+    <script src="lazyload.js"></script>
 </body>
 </html>
+```
